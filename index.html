@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="MARS translates scene risks into bounded action corrections for frozen flow-matching vision-language-action policies, without additional training.">
+  <meta property="og:title" content="MARS — Look Before You Flow">
+  <meta property="og:description" content="Inference-Time Risk Steering for Frozen Flow-Matching VLAs">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://MARS-ICLR-2026.github.io/assets/images/introduction.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>MARS — Look Before You Flow</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/results.js" defer></script>
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <header class="masthead wrap">
+    <div class="brand"><span class="brand-symbol" aria-hidden="true">m<span>↗</span></span>MARS<span class="brand-divider"></span><span class="brand-note">ROBOT LEARNING</span></div>
+    <span class="edition">RESEARCH PROJECT <span>2026</span></span>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="paper-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="signal"></span> MULTI-RISK ACTION REPULSION AND STEERING</p>
+        <h1 id="paper-title">Look Before<br>You <em>Flow.</em><span class="subtitle">Inference-Time Risk Steering for<br class="desktop-break"> Frozen Flow-Matching VLAs</span></h1>
+        <p class="anonymous-authors">Anonymous authors · Under double-blind review</p>
+        <p class="hero-description">Teach the action to avoid the risk.<br>Keep the policy frozen.</p>
+        <nav class="resource-links" aria-label="Project resources">
+          <a class="resource primary" href="code/index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg>GitHub Code<span aria-hidden="true">↗</span></a>
+          <a class="resource" href="assets/paper/mars.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8m-8 4h8"/></svg>Paper<span aria-hidden="true">↗</span></a>
+          <a class="resource" href="#video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 10 6-10 6V6Z"/></svg>Video<span aria-hidden="true">↘</span></a>
+        </nav>
+      </div>
+      <figure class="hero-visual">
+        <div class="visual-heading"><span><span class="signal green"></span> SEE THE RISK. STEER THE ACTION.</span><span>01 / MARS</span></div>
+        <div class="scene"><img src="assets/images/hero-scene.webp" alt="Schematic MARS path toward a bowl, avoiding a nearby bottle and knife." width="623" height="369" fetchpriority="high"></div>
+        <div class="scene-caption"><span class="scene-tag">TASK</span><span>“Pick up the bowl.”</span><span class="scene-marker" aria-hidden="true">↗</span></div>
+        <figcaption>Scene risks → counterfactual references → action correction.<br><span>Illustrative paths from the paper; not a recorded rollout.</span></figcaption>
+      </figure>
+    </section>
+    <div class="principles wrap" aria-label="Method properties">
+      <div><span class="property-number">01</span><span>Training-free<small>No parameter updates</small></span></div>
+      <div><span class="property-number">02</span><span>Risk-aware<small>Visually grounded counterfactuals</small></span></div>
+      <div><span class="property-number">03</span><span>Trajectory-anchored<small>Bounded action corrections</small></span></div>
+    </div>
+    <section class="section wrap overview" aria-labelledby="overview-title">
+      <div class="section-label"><span>01 / THE IDEA</span><span class="line"></span></div>
+      <div class="editorial-grid"><h2 id="overview-title">Task success is only<br>part of the story.</h2><div class="prose"><p>Completing a manipulation task can still disturb fragile objects, collide with obstacles, or cause an unsafe interaction. A language instruction alone does not reliably control the continuous actions of a robot.</p><p><strong>MARS connects semantic risk understanding to action-space steering.</strong> A frozen vision-language model identifies scene risks. A frozen flow-matching policy then provides counterfactual velocity references, which MARS uses to construct a bounded correction to the original action chunk.</p></div></div>
+      <figure class="paper-figure comparison"><img src="assets/images/introduction.webp" alt="Comparison of task-only VLA, avoidance prompting, and MARS for picking up a bowl near a bottle and knife." width="2000" height="1061" loading="lazy"><figcaption><span>FIG. 01</span> From task-only execution to risk-aware action correction. Paths are schematic.</figcaption></figure>
+    </section>
+    <section class="method-band">
+      <div class="section wrap">
+        <div class="section-label"><span>02 / THE METHOD</span><span class="line"></span></div>
+        <div class="section-heading"><h2>Two components.<br>One frozen policy.</h2><p>Turn what the model sees into a correction<br>the robot can act on.</p></div>
+        <div class="method-steps">
+          <article><span class="step-index">A</span><div><span class="eyebrow">GRV</span><h3>Grounded Risk Verbalization</h3><p>A frozen Qwen3-VL-2B-Instruct model reads agent and wrist views at 256 × 256 resolution. It filters non-target risks by grounding confidence and semantic relevance, ranks retained risks by severity, and expresses unwanted interactions as affirmative counterfactual commands. These commands supply references; they are never executed.</p></div></article>
+          <article><span class="step-index">B</span><div><span class="eyebrow">TAFR</span><h3>Trajectory-Anchored Flow Repulsion</h3><p>Compare nominal and counterfactual velocities at the same anchor state and flow time. Mask, clip, and severity-weight their residuals, then accumulate a separate correction without perturbing the anchor trajectory. Guidance varies across both the action horizon and the ODE integration steps.</p></div></article>
+        </div>
+        <div class="method-detail"><h3>Risk assessment on a schedule</h3><p>GRV reuses risk records between calls, with a default interval of four replanning cycles. Potentially risky moving objects shorten the interval to one cycle. Assessment is pipelined with action execution; the number of retained risks is capped to keep the total guidance bounded.</p></div>
+        <figure class="paper-figure framework"><button class="figure-button" type="button" id="open-framework" aria-label="Enlarge MARS framework figure" aria-haspopup="dialog"><img src="assets/images/framework.webp" alt="MARS framework: GRV produces risk prompts and severity; TAFR evaluates frozen VLA velocities at a shared anchor, clips and weights residuals, and adds the independent correction to the nominal action chunk." width="2200" height="1806" loading="lazy"><span class="zoom-label">View full figure ↗</span></button><figcaption><span>FIG. 02</span> All velocity evaluations share the nominal anchor. The correction is added only at the output.</figcaption></figure>
+        <div class="equation-note"><span class="eyebrow">THE KEY SEPARATION</span><span class="equation">P<sup>corr</sup> = x<sub>K</sub> + δ<sub>K</sub></span><p>Nominal trajectory + independent correction.<br>No retained risks → the original policy output.</p></div>
+      </div>
+    </section>
+    <section class="section wrap" aria-labelledby="results-title">
+      <div class="section-label"><span>03 / SIMULATION</span><span class="line"></span></div>
+      <div class="section-heading"><h2 id="results-title">Measure completion.<br>Measure the cost.</h2><p>VLA-Arena · Safety dimension<br>π<sub>0.5</sub> compared with π<sub>0.5</sub> + MARS</p></div>
+      <div class="result-highlights"><div><span class="stat">98.8<span>%</span></span><h3>Lower cumulative cost</h3><p>HazardAvoidance · L0<br>7.613 → 0.095</p></div><div><span class="stat">+22<span>pp</span></span><h3>Higher task success</h3><p>HazardAvoidance · L2<br>28% → 50%</p></div><div><span class="stat">0.00</span><h3>Cumulative cost</h3><p>StaticObstacles · L1<br>30.42 → 0.00</p></div></div>
+      <div class="results-explorer">
+        <div class="explorer-toolbar"><h3>Explore the results</h3><div class="filters"><label>Suite<select id="suite"><option value="StaticObstacles">Static obstacles</option><option value="DynamicObstacles">Dynamic obstacles</option><option value="HazardAvoidance" selected>Hazard avoidance</option><option value="CautiousGrasp">Cautious grasp</option><option value="StatePreservation">State preservation</option></select></label><label>Difficulty<select id="level"><option value="0">L0 · Nominal</option><option value="1">L1 · Perturbed</option><option value="2">L2 · Held-out</option></select></label></div></div>
+        <div class="legend"><span><i class="baseline-dot"></i>π<sub>0.5</sub></span><span><i class="mars-dot"></i>π<sub>0.5</sub> + MARS</span></div>
+        <div id="result-display" aria-live="polite" aria-atomic="true">
+          <div class="chart-grid"><div class="metric-chart"><h4>Success rate <span>HIGHER IS BETTER ↑</span></h4><div class="bar-row"><span>π<sub>0.5</sub></span><div class="bar-track"><div class="bar baseline" style="width:44%"></div></div><strong>44%</strong></div><div class="bar-row"><span>+ MARS</span><div class="bar-track"><div class="bar mars" style="width:64%"></div></div><strong>64%</strong></div></div><div class="metric-chart"><h4>Cumulative cost <span>LOWER IS BETTER ↓</span></h4><div class="bar-row"><span>π<sub>0.5</sub></span><div class="bar-track"><div class="bar baseline" style="width:100%"></div></div><strong>7.613</strong></div><div class="bar-row"><span>+ MARS</span><div class="bar-track"><div class="bar mars" style="width:1.248%"></div></div><strong>0.095</strong></div></div></div>
+          <p class="result-note">HazardAvoidance · L0: success rises from 44% to 64%, while cumulative cost falls from 7.613 to 0.095.</p>
+        </div>
+        <noscript><p class="result-note">The chart shows HazardAvoidance at L0. Enable JavaScript to explore the other suites and difficulty levels.</p></noscript>
+      </div>
+      <p class="data-note">Values are transcribed from the manuscript’s VLA-Arena table. Cumulative cost uses the benchmark’s native units; cost bars scale to the larger value in each comparison. pp = percentage points.</p>
+      <div class="finding"><span class="eyebrow">WHERE STEERING IS HARDER</span><p>Moving obstacles remain challenging: for π<sub>0.5</sub>, MARS increases cumulative cost on DynamicObstacles at all three difficulty levels. Tight grasping tolerances can also limit the benefit of action corrections. Clipping bounds changes in normalized action coordinates; it does not certify collision-free motion. Missed hazards, stale risk records, and conflicting risk residuals remain limitations.</p></div>
+    </section>
+    <section class="section wrap real-world" aria-labelledby="real-world-title">
+      <div class="section-label"><span>04 / REAL-WORLD PROTOCOL</span><span class="line"></span></div>
+      <div class="section-heading"><h2 id="real-world-title">Five task families.<br>Two robot platforms.</h2><p>Dobot CR-10 · Galaxea A1X<br>Nominal, challenging, and held-out scenes</p></div>
+      <p class="protocol-intro">The manuscript defines the same instructions and scoring rules for both robots, measuring task completion, safe completion, violations, and aborts. Numerical real-world results are pending.</p>
+      <div class="task-list">
+        <article><span>01</span><div><h3>Affordance-aware grasping</h3><p>Move the mug onto the plate without grasping the similar non-target container. This task serves as an in-distribution reference for basic pick-and-place competence.</p></div></article>
+        <article><span>02</span><div><h3>Obstacle avoidance</h3><p>Move the bowl onto the plate without contacting the wine bottle between them.</p></div></article>
+        <article><span>03</span><div><h3>Hazard avoidance</h3><p>Move the lemon onto the plate while staying outside the exclusion volume around an illuminated LED candle.</p></div></article>
+        <article><span>04</span><div><h3>Cautious grasp</h3><p>Place a blunt knife replica in the box without grasping its blade or dropping it.</p></div></article>
+        <article><span>05</span><div><h3>State preservation</h3><p>Move the apple onto the plate while keeping the adjacent wine bottle upright and within its position tolerance.</p></div></article>
+      </div>
+    </section>
+    <section class="video-band" id="video" aria-labelledby="video-title" tabindex="-1"><div class="wrap video-content"><div><p class="eyebrow">05 / WATCH MARS</p><h2 id="video-title">From perception<br>to safer motion.</h2><p>A closer look at risk-aware robot manipulation.</p></div><div class="video-placeholder"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="10" width="52" height="40" rx="5"/><path d="m27 22 15 8-15 8V22ZM23 57h18"/></svg><h3>Video coming soon</h3><p>The project video will appear here<br>when it is available.</p></div></div></section>
+  </main>
+  <footer class="wrap"><div class="brand">MARS<span class="footer-expansion">Multi-risk Action Repulsion and Steering</span></div><span>LOOK BEFORE YOU FLOW. <span class="footer-year">2026</span></span></footer>
+  <dialog id="figure-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><h2 id="dialog-title">MARS framework</h2><button type="button" id="close-framework" aria-label="Close enlarged figure">Close ×</button></div><img src="assets/images/framework.webp" alt="Enlarged MARS framework showing GRV and TAFR with independent anchor and correction states." width="2200" height="1806"></dialog>
+</body>
+</html>
