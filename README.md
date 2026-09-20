@@ -20,7 +20,7 @@ Open http://127.0.0.1:4173. Opening `index.html` directly also works.
 | --- | --- | --- |
 | GitHub Code | `code/index.html` — a local release-status page | Replace the first resource anchor in `index.html` with the implementation repository URL when available. |
 | Paper | `assets/paper/mars.pdf` | Replace the PDF with the finalized paper or update the resource anchor. |
-| Video | `#video` — an explicit “Video coming soon” section | Replace the placeholder with a real video player and keep the anchor, or point the resource anchor to the video URL. |
+| Video | `#video` — four-task rollout gallery | Update `assets/videos.js` and the gallery markup when recordings become available. |
 
 No dataset or model-hosting resource links are included. The supplied GitHub repository hosts the website; it is not presented as the implementation repository.
 
@@ -68,3 +68,9 @@ The page identifies its authors only as “Anonymous authors”. No author names
 ## Current manuscript update
 
 GRV now describes 256 × 256 inputs, confidence/relevance filtering, a retained-risk cap, and the four-cycle / one-cycle invocation schedule. The real-world protocol has five task families, including state preservation; measurements remain pending. The 15 displayed VLA-Arena comparisons were rechecked against the current table and are unchanged. The local code landing page no longer quotes the release-upon-acceptance statement, which is commented out in the current manuscript.
+
+## Rollout gallery (2026-09-20)
+
+Four video task families, each with two platforms, success/failure slots, and front/wrist players. Platform 1 maps to the supplied `all_s` collection; Platform 2 maps to `all_s2`. Robot model names await confirmation. `pickupfruit` maps to Hazard avoidance; `pickupscrewdriver` maps to Cautious grasp, as requested (the screwdriver footage is not the knife protocol described in the manuscript). All available mapped episodes are provisionally successful: seven Platform 1 hazard episodes, five Platform 1 cautious episodes, and four Platform 2 hazard episodes.
+
+All missing slots, including all failures, use the exact `all_s2/pickupcandle` pair, labeled Placeholder. They do not establish task outcome or platform identity. `pickupcandle2` is not used. The 34 unique MP4 assets share references across 32 player slots; episode selectors expose every available mapped recording. Metadata is removed, audio is excluded, and H.264 video is losslessly remuxed with fast-start indexing. No absolute source paths are published. Native controls work without JavaScript; episode selection and paired playback require JavaScript. Paired playback aligns the start time but does not promise frame-accurate hardware synchronization.
