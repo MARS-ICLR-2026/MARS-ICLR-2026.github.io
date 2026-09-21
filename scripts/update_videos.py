@@ -48,5 +48,5 @@ for task,title,prefix in tasks:
   parts.append('</div>')
  parts.append('</section>')
 parts.append('</div></section>')
-p=root/'index.html';s=p.read_text();start=s.index('    <section class="video-band"');end=s.index('\n  </main>',start);p.write_text(s[:start]+'    '+''.join(parts)+s[end:])
+p=root/'index.html';s=p.read_text();start=s.index('    <section class="video-band"');end=s.index('\n    <section class="section wrap oracle-section"',start) if 'class="section wrap oracle-section"' in s else s.index('\n  </main>',start);p.write_text(s[:start]+'    '+''.join(parts)+s[end:])
 print(json.dumps({k:len(v) for k,v in data.items() if k!='placeholder'},indent=2))

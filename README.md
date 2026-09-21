@@ -82,3 +82,9 @@ The real-world protocol summary is updated to four task families. The downloadab
 ## Visual design refresh
 
 The current presentation is inspired by [PILOT](https://github.com/pilot-wam-2026/pilot-wam-2026.github.io): a centered project wordmark, gold/rose/lavender palette, warm paper surfaces, rounded figures and video cards, and a light/dark toggle. `assets/pilot-inspired.css` contains original MARS-specific styling; no reference-site assets, author information, or additional resource links are imported. Theme preference is stored locally in the browser; there are no third-party font requests or analytics. Video mappings, training-data labels, outcome labels, and the three resource destinations remain intact.
+
+## Oracle success gallery
+
+The gallery contains all 249 records whose source-browser status is exactly `success`: 193 π0.5, 40 StarVLA-PI, 13 SmolVLA, and 3 StarVLA-GR00T. Dataset labels are preserved as supplied: 155 `vla-arena`, 70 `safelibero`, and 24 `libero-safety`. These are native-policy Oracle probes, not MARS-guided rollouts or a representative success-rate sample.
+
+All videos are bundled locally under `assets/videos/oracle`, with sanitized metadata, JPEG posters, and WebVTT execution-stage captions. `assets/oracle-videos.js` records source experiment IDs and display fields without hostnames, user names, or absolute source paths. Filtering supports model, dataset, suite, protocol, and prompt search; pagination exposes all clips. The source browser defines the preparation boundary as `prep_frames / 20` seconds; this timing is preserved for 39 prepared episodes. The other 210 episodes start directly from the initial state. Real-world video regeneration preserves this independent gallery.
