@@ -78,3 +78,7 @@ The superseded `Obstacle avoidance-1-old` folder is excluded. The `trimmed_16s` 
 `assets/video-sources.json` records relative source paths, exact outcome assignments, and episode indices. Rebuild with `python3 scripts/update_videos.py /path/to/final`. Requires ffmpeg. The source path itself is never embedded in website assets. Metadata and audio are omitted; H.264 video is remuxed without quality loss, with fast-start indexing and JPEG posters. Paired playback aligns start times but does not promise frame-accurate hardware synchronization.
 
 The real-world protocol summary is updated to four task families. The downloadable PDF and simulation results remain the separately maintained manuscript snapshot described above; this update concerns the final video collection.
+
+## Visual design refresh
+
+The current presentation is inspired by [PILOT](https://github.com/pilot-wam-2026/pilot-wam-2026.github.io): a centered project wordmark, gold/rose/lavender palette, warm paper surfaces, rounded figures and video cards, and a light/dark toggle. `assets/pilot-inspired.css` contains original MARS-specific styling; no reference-site assets, author information, or additional resource links are imported. Theme preference is stored locally in the browser; there are no third-party font requests or analytics. Video mappings, training-data labels, outcome labels, and the three resource destinations remain intact.

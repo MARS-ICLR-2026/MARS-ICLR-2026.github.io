@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8f7f4">
+  <meta name="theme-color" content="#fffcf8">
   <meta name="description" content="MARS translates scene risks into bounded action corrections for frozen flow-matching vision-language-action policies, without additional training.">
   <meta property="og:title" content="MARS — Look Before You Flow">
   <meta property="og:description" content="Inference-Time Risk Steering for Frozen Flow-Matching VLAs">
@@ -13,23 +13,26 @@
   <title>MARS — Look Before You Flow</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/pilot-inspired.css">
+  <script src="assets/theme.js" defer></script>
   <script src="assets/results.js" defer></script>
   <script src="assets/site.js" defer></script>
   <script src="assets/videos.js" defer></script>
   <script src="assets/video-gallery.js" defer></script>
 </head>
 <body>
+  <div class="reading-progress" aria-hidden="true"></div>
   <header class="masthead wrap">
-    <div class="brand"><span class="brand-symbol" aria-hidden="true">m<span>↗</span></span>MARS<span class="brand-divider"></span><span class="brand-note">ROBOT LEARNING</span></div>
-    <span class="edition">RESEARCH PROJECT <span>2026</span></span>
+    <div class="brand"><span class="brand-symbol" aria-hidden="true"></span>MARS<span class="brand-divider"></span><span class="brand-note">ROBOT LEARNING</span></div>
+    <div class="header-tools"><span class="edition">ANONYMOUS RESEARCH · 2026</span><button type="button" class="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">☾</button></div>
   </header>
   <main>
     <section class="hero wrap" aria-labelledby="paper-title">
       <div class="hero-copy">
         <p class="eyebrow"><span class="signal"></span> MULTI-RISK ACTION REPULSION AND STEERING</p>
-        <h1 id="paper-title">Look Before<br>You <em>Flow.</em><span class="subtitle">Inference-Time Risk Steering for<br class="desktop-break"> Frozen Flow-Matching VLAs</span></h1>
+        <h1 id="paper-title"><span class="project-wordmark">MARS</span><span class="subtitle">Look Before You Flow:<br>Inference-Time Risk Steering for Frozen Flow-Matching VLAs</span></h1>
         <p class="anonymous-authors">Anonymous authors · Under double-blind review</p>
-        <p class="hero-description">Teach the action to avoid the risk.<br>Keep the policy frozen.</p>
+        <p class="hero-description">Training-free risk steering. Frozen models. Bounded action corrections.</p>
         <nav class="resource-links" aria-label="Project resources">
           <a class="resource primary" href="code/index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg>GitHub Code<span aria-hidden="true">↗</span></a>
           <a class="resource" href="assets/paper/mars.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8m-8 4h8"/></svg>Paper<span aria-hidden="true">↗</span></a>
@@ -38,7 +41,7 @@
       </div>
       <figure class="hero-visual">
         <div class="visual-heading"><span><span class="signal green"></span> SEE THE RISK. STEER THE ACTION.</span><span>01 / MARS</span></div>
-        <div class="scene"><img src="assets/images/hero-scene.webp" alt="Schematic MARS path toward a bowl, avoiding a nearby bottle and knife." width="623" height="369" fetchpriority="high"></div>
+        <div class="scene"><img src="assets/images/introduction.webp" alt="Comparison of task-only execution, avoidance prompting, and MARS risk-aware action correction." width="2000" height="1061" fetchpriority="high"></div>
         <div class="scene-caption"><span class="scene-tag">TASK</span><span>“Pick up the bowl.”</span><span class="scene-marker" aria-hidden="true">↗</span></div>
         <figcaption>Scene risks → counterfactual references → action correction.<br><span>Illustrative paths from the paper; not a recorded rollout.</span></figcaption>
       </figure>
@@ -51,7 +54,7 @@
     <section class="section wrap overview" aria-labelledby="overview-title">
       <div class="section-label"><span>01 / THE IDEA</span><span class="line"></span></div>
       <div class="editorial-grid"><h2 id="overview-title">Task success is only<br>part of the story.</h2><div class="prose"><p>Completing a manipulation task can still disturb fragile objects, collide with obstacles, or cause an unsafe interaction. A language instruction alone does not reliably control the continuous actions of a robot.</p><p><strong>MARS connects semantic risk understanding to action-space steering.</strong> A frozen vision-language model identifies scene risks. A frozen flow-matching policy then provides counterfactual velocity references, which MARS uses to construct a bounded correction to the original action chunk.</p></div></div>
-      <figure class="paper-figure comparison"><img src="assets/images/introduction.webp" alt="Comparison of task-only VLA, avoidance prompting, and MARS for picking up a bowl near a bottle and knife." width="2000" height="1061" loading="lazy"><figcaption><span>FIG. 01</span> From task-only execution to risk-aware action correction. Paths are schematic.</figcaption></figure>
+
     </section>
     <section class="method-band">
       <div class="section wrap">
