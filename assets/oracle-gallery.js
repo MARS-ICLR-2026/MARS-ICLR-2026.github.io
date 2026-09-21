@@ -2,7 +2,7 @@
 (() => {
   const byId = id => document.getElementById(id);
   const player = byId('oracle-player');
-  const fields = ['model', 'dataset', 'suite', 'protocol'];
+  const fields = ['dataset'];
   const modelNames = {'π0.5':'π0.5','starvla_qwenpi':'StarVLA-PI','starvla_qwengroot':'StarVLA-GR00T','smolvla':'SmolVLA'};
   let filtered = [], page = 0, selected = null;
   const pageSize = 12;
@@ -43,8 +43,7 @@
     byId('oracle-next').disabled = (page+1)*pageSize >= filtered.length;
   }
   function filter() {
-    const query = byId('oracle-query').value.trim().toLowerCase();
-    filtered = ORACLE_VIDEOS.filter(row => fields.every(field => !byId('oracle-'+field).value || row[field] === byId('oracle-'+field).value) && [row.prompt,row.preparation_prompt,row.suite].join(' ').toLowerCase().includes(query));
+    filtered = ORACLE_VIDEOS.filter(row => fields.every(field => !byId('oracle-'+field).value || row[field] === byId('oracle-'+field).value));
     page = 0;
     if (!filtered.some(row => row.video === selected?.video)) {
       if (filtered.length) choose(filtered[0]);
@@ -61,7 +60,6 @@
     for (const value of [...new Set(ORACLE_VIDEOS.map(row => row[field]))].sort()) select.add(new Option(field === 'model' ? modelNames[value] || value : value,value));
     select.addEventListener('change',filter);
   }
-  byId('oracle-query').addEventListener('input',filter);
   byId('oracle-prev').addEventListener('click',()=>{page--;draw();});
   byId('oracle-next').addEventListener('click',()=>{page++;draw();});
   player.addEventListener('timeupdate',active); player.addEventListener('seeked',active);
