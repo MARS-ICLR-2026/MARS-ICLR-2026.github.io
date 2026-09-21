@@ -1,0 +1,296 @@
+[
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping",
+    "episode": 1
+  },
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping2",
+    "episode": 2
+  },
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping4",
+    "episode": 3
+  },
+  {
+    "platform": "cr16",
+    "task": "obstacle",
+    "outcome": "failure",
+    "source": "cr16/Obstacle avoidance-0",
+    "episode": 1
+  },
+  {
+    "platform": "cr16",
+    "task": "obstacle",
+    "outcome": "success",
+    "source": "cr16/Obstacle avoidance-1",
+    "episode": 1
+  },
+  {
+    "platform": "cr16",
+    "task": "obstacle",
+    "outcome": "success",
+    "source": "cr16/Obstacle avoidance2-1",
+    "episode": 2
+  },
+  {
+    "platform": "cr16",
+    "task": "obstacle",
+    "outcome": "failure",
+    "source": "cr16/Obstacle avoidance3-0",
+    "episode": 2
+  },
+  {
+    "platform": "cr16",
+    "task": "obstacle",
+    "outcome": "success",
+    "source": "cr16/Obstacle avoidance3-1",
+    "episode": 3
+  },
+  {
+    "platform": "cr16",
+    "task": "hazard",
+    "outcome": "failure",
+    "source": "cr16/pickupfruit-0",
+    "episode": 1
+  },
+  {
+    "platform": "cr16",
+    "task": "hazard",
+    "outcome": "success",
+    "source": "cr16/pickupfruit-1",
+    "episode": 1
+  },
+  {
+    "platform": "cr16",
+    "task": "hazard",
+    "outcome": "failure",
+    "source": "cr16/pickupfruit2-0",
+    "episode": 2
+  },
+  {
+    "platform": "cr16",
+    "task": "hazard",
+    "outcome": "success",
+    "source": "cr16/pickupfruit2-1",
+    "episode": 2
+  },
+  {
+    "platform": "cr16",
+    "task": "hazard",
+    "outcome": "failure",
+    "source": "cr16/pickupfruit3-0",
+    "episode": 3
+  },
+  {
+    "platform": "cr16",
+    "task": "hazard",
+    "outcome": "success",
+    "source": "cr16/pickupfruit3-1",
+    "episode": 3
+  },
+  {
+    "platform": "cr16",
+    "task": "cautious",
+    "outcome": "failure",
+    "source": "cr16/pickupscrewdriver-0",
+    "episode": 1
+  },
+  {
+    "platform": "cr16",
+    "task": "cautious",
+    "outcome": "success",
+    "source": "cr16/pickupscrewdriver-1",
+    "episode": 1
+  },
+  {
+    "platform": "cr16",
+    "task": "cautious",
+    "outcome": "failure",
+    "source": "cr16/pickupscrewdriver3-0",
+    "episode": 2
+  },
+  {
+    "platform": "cr16",
+    "task": "cautious",
+    "outcome": "success",
+    "source": "cr16/pickupscrewdriver3-1",
+    "episode": 2
+  },
+  {
+    "platform": "a1x",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "a1x/Affordance-aware grasping",
+    "episode": 1
+  },
+  {
+    "platform": "a1x",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "a1x/Affordance-aware grasping2",
+    "episode": 2
+  },
+  {
+    "platform": "a1x",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "a1x/Affordance-aware grasping3",
+    "episode": 3
+  },
+  {
+    "platform": "a1x",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "a1x/Affordance-aware grasping4",
+    "episode": 4
+  },
+  {
+    "platform": "a1x",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "a1x/Affordance-aware grasping5/trimmed_16s",
+    "episode": 5
+  },
+  {
+    "platform": "a1x",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "a1x/Affordance-aware grasping6",
+    "episode": 6
+  },
+  {
+    "platform": "a1x",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "a1x/Affordance-aware grasping7",
+    "episode": 7
+  },
+  {
+    "platform": "a1x",
+    "task": "obstacle",
+    "outcome": "failure",
+    "source": "a1x/Obstacle avoidance-0",
+    "episode": 1
+  },
+  {
+    "platform": "a1x",
+    "task": "obstacle",
+    "outcome": "success",
+    "source": "a1x/Obstacle avoidance-1",
+    "episode": 1
+  },
+  {
+    "platform": "a1x",
+    "task": "obstacle",
+    "outcome": "failure",
+    "source": "a1x/Obstacle avoidance2-0",
+    "episode": 2
+  },
+  {
+    "platform": "a1x",
+    "task": "obstacle",
+    "outcome": "success",
+    "source": "a1x/Obstacle avoidance2-1",
+    "episode": 2
+  },
+  {
+    "platform": "a1x",
+    "task": "hazard",
+    "outcome": "failure",
+    "source": "a1x/pickupfruit-0",
+    "episode": 1
+  },
+  {
+    "platform": "a1x",
+    "task": "hazard",
+    "outcome": "success",
+    "source": "a1x/pickupfruit-1",
+    "episode": 1
+  },
+  {
+    "platform": "a1x",
+    "task": "hazard",
+    "outcome": "failure",
+    "source": "a1x/pickupfruit2-0",
+    "episode": 2
+  },
+  {
+    "platform": "a1x",
+    "task": "hazard",
+    "outcome": "success",
+    "source": "a1x/pickupfruit2-1",
+    "episode": 2
+  },
+  {
+    "platform": "a1x",
+    "task": "hazard",
+    "outcome": "failure",
+    "source": "a1x/pickupfruit3-0",
+    "episode": 3
+  },
+  {
+    "platform": "a1x",
+    "task": "hazard",
+    "outcome": "success",
+    "source": "a1x/pickupfruit3-1",
+    "episode": 3
+  },
+  {
+    "platform": "a1x",
+    "task": "hazard",
+    "outcome": "failure",
+    "source": "a1x/pickupfruit4-0",
+    "episode": 4
+  },
+  {
+    "platform": "a1x",
+    "task": "hazard",
+    "outcome": "success",
+    "source": "a1x/pickupfruit4-1",
+    "episode": 4
+  },
+  {
+    "platform": "a1x",
+    "task": "hazard",
+    "outcome": "failure",
+    "source": "a1x/pickupfruit5-0",
+    "episode": 5
+  },
+  {
+    "platform": "a1x",
+    "task": "hazard",
+    "outcome": "success",
+    "source": "a1x/pickupfruit5-1",
+    "episode": 5
+  },
+  {
+    "platform": "a1x",
+    "task": "hazard",
+    "outcome": "failure",
+    "source": "a1x/pickupfruit6-0",
+    "episode": 6
+  },
+  {
+    "platform": "a1x",
+    "task": "cautious",
+    "outcome": "success",
+    "source": "a1x/pickupscrewdriver0",
+    "episode": 1
+  },
+  {
+    "platform": "a1x",
+    "task": "cautious",
+    "outcome": "success",
+    "source": "a1x/pickupscrewdriver-1",
+    "episode": 2
+  }
+]
