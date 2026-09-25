@@ -33,7 +33,7 @@ Source snapshot: local manuscript on 2026-09-17.
 - Title: `paper/main.tex` in the parent research workspace.
 - Method text: `paper/sections/method.tex`; exact GRV / TAFR names and independent anchor/correction update preserved.
 - Paper: an unchanged copy of `paper/main.pdf`.
-- Images: rendered from `paper/pics/introduction.pdf` and `paper/pics/framework.pdf`. The hero crops the MARS panel from the introduction figure. It is explicitly labeled as a schematic, not an empirical rollout.
+- Images: rendered from `paper/pics/introduction.pdf` and `paper/pics/framework.pdf`. The hero displays the complete introduction figure. It is explicitly labeled as a schematic, not an empirical rollout.
 - Results: `assets/results.js` transcribes the π0.5 and π0.5 + MARS rows of Table `tab:vla-arena` in `paper/sections/evaluation.tex`, including all five suites and three levels. Each entry is `[base SR, base CC, MARS SR, MARS CC]`.
 - The 98.8% highlight is `(7.613 - 0.095) / 7.613 * 100`, rounded to one decimal. This uses table precision; the manuscript prose uses rounded numbers and reports 98.7%.
 - Dynamic-obstacle cost increases and other mixed results remain visible. Results are manuscript-reported, not independently reproduced.
@@ -88,3 +88,9 @@ The current presentation is inspired by [PILOT](https://github.com/pilot-wam-202
 The gallery contains all 249 records whose source-browser status is exactly `success`: 193 π0.5, 40 StarVLA-PI, 13 SmolVLA, and 3 StarVLA-GR00T. Dataset labels are preserved as supplied: 155 `vla-arena`, 70 `safelibero`, and 24 `libero-safety`. These are native-policy Oracle probes, not MARS-guided rollouts or a representative success-rate sample.
 
 All videos are bundled locally under `assets/videos/oracle`, with sanitized metadata, JPEG posters, and WebVTT execution-stage captions. `assets/oracle-videos.js` records source experiment IDs and display fields without hostnames, user names, or absolute source paths. Filtering uses Dataset only; pagination exposes all clips. Model, suite, protocol, and instructions remain visible in clip details. The source browser defines the preparation boundary as `prep_frames / 20` seconds; this timing is preserved for 39 prepared episodes. The other 210 episodes start directly from the initial state. Real-world video regeneration preserves this independent gallery.
+
+## Manuscript figure sync (2026-09-25)
+
+All nine figures currently referenced by the manuscript are included as 2400-pixel-wide WebP assets: introduction, framework, real-world results and setups, obstacle avoidance, qualitative simulation cases, trajectory anchoring, component analysis, experimental platforms, and complete real-world rollouts. Figures retain their complete aspect ratios. The framework keeps its enlargement dialog; added figures open at full resolution when clicked.
+
+`assets/image-sources.json` records relative source filenames, SHA-256 hashes, asset paths, and rendered dimensions. Source metadata is not copied into the rendered images. This update synchronizes figures and their captions; the downloadable manuscript and interactive result tables retain their existing snapshots.
