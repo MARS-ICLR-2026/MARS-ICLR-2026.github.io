@@ -68,7 +68,6 @@
         </div>
         <div class="method-detail"><h3>Risk assessment on a schedule</h3><p>GRV reuses risk records between calls, with a default interval of four replanning cycles. Potentially risky moving objects shorten the interval to one cycle. Assessment is pipelined with action execution; the number of retained risks is capped to keep the total guidance bounded.</p></div>
         <figure class="paper-figure framework"><button class="figure-button" type="button" id="open-framework" aria-label="Enlarge MARS framework figure" aria-haspopup="dialog"><img src="assets/images/framework.webp" alt="MARS framework: GRV produces risk prompts and severity; TAFR evaluates frozen VLA velocities at a shared anchor, clips and weights residuals, and adds the independent correction to the nominal action chunk." width="2400" height="1071" loading="lazy"><span class="zoom-label">View full figure ↗</span></button><figcaption><span>FIG. 02</span> All velocity evaluations share the nominal anchor. The correction is added only at the output.</figcaption></figure>
-        <div class="equation-note"><span class="eyebrow">THE KEY SEPARATION</span><span class="equation">P<sup>corr</sup> = x<sub>K</sub> + δ<sub>K</sub></span><p>Nominal trajectory + independent correction.<br>No retained risks → the original policy output.</p></div>
       </div>
     </section>
     <section class="section wrap" aria-labelledby="results-title">
