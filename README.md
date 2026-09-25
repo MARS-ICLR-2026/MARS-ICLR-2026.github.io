@@ -94,3 +94,5 @@ All videos are bundled locally under `assets/videos/oracle`, with sanitized meta
 All nine figures currently referenced by the manuscript are included as 2400-pixel-wide WebP assets: introduction, framework, real-world results and setups, obstacle avoidance, qualitative simulation cases, trajectory anchoring, component analysis, experimental platforms, and complete real-world rollouts. Figures retain their complete aspect ratios. The framework keeps its enlargement dialog; added figures open at full resolution when clicked.
 
 `assets/image-sources.json` records relative source filenames, SHA-256 hashes, asset paths, and rendered dimensions. Source metadata is not copied into the rendered images. This update synchronizes figures and their captions; the downloadable manuscript and interactive result tables retain their existing snapshots.
+
+The standalone obstacle-avoidance figure is omitted from the page because the complete real-world rollout figure already includes that comparison. Its rendered asset remains available in the source inventory.
