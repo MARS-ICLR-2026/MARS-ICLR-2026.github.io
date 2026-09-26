@@ -10,3 +10,6 @@
 /* Keep the two Affordance-aware grasping platforms side by side. */
 .platform-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}.platform-pair .platform-label{margin-top:25px}
 @media(max-width:900px){.platform-pair{grid-template-columns:1fr}}
+
+/* Affordance has one outcome per platform; let its single card fill the column. */
+.platform-pair .outcome-grid{grid-template-columns:1fr}
