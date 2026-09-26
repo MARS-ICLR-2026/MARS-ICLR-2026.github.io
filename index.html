@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pilot-inspired.css">
   <script src="assets/theme.js" defer></script>
-  <script src="assets/results.js" defer></script>
-  <script src="assets/site.js" defer></script>
+  <script src="assets/results.js?v=bc59451ec616" defer></script>
+  <script src="assets/site.js?v=bc59451ec616" defer></script>
   <script src="assets/videos.js" defer></script>
   <script src="assets/video-gallery.js" defer></script>
   <script src="assets/oracle-videos.js" defer></script>
@@ -72,18 +72,18 @@
     </section>
     <section class="section wrap" aria-labelledby="results-title">
       <div class="section-label"><span>03 / SIMULATION</span><span class="line"></span></div>
-      <div class="section-heading"><h2 id="results-title">Measure completion.<br>Measure the cost.</h2><p>VLA-Arena · Safety dimension<br>π<sub>0.5</sub> compared with π<sub>0.5</sub> + MARS</p></div>
+      <div class="section-heading"><h2 id="results-title">Measure completion.<br>Measure the cost.</h2><p>Three safety benchmarks<br>Four backbones, with and without MARS</p></div>
       <div class="result-highlights"><div><span class="stat">40.0<span>%</span></span><h3>Lower cumulative cost</h3><p>HazardAvoidance · L0<br>7.613 → 4.57</p></div><div><span class="stat">+22<span>pp</span></span><h3>Higher task success</h3><p>HazardAvoidance · L2<br>28% → 50%</p></div><div><span class="stat">18.25</span><h3>Cumulative cost</h3><p>StaticObstacles · L1<br>30.42 → 18.25</p></div></div>
       <div class="results-explorer">
-        <div class="explorer-toolbar"><h3>Explore the results</h3><div class="filters"><label>Suite<select id="suite"><option value="StaticObstacles">Static obstacles</option><option value="DynamicObstacles">Dynamic obstacles</option><option value="HazardAvoidance" selected>Hazard avoidance</option><option value="CautiousGrasp">Cautious grasp</option><option value="StatePreservation">State preservation</option></select></label><label>Difficulty<select id="level"><option value="0">L0 · Nominal</option><option value="1">L1 · Perturbed</option><option value="2">L2 · Held-out</option></select></label></div></div>
-        <div class="legend"><span><i class="baseline-dot"></i>π<sub>0.5</sub></span><span><i class="mars-dot"></i>π<sub>0.5</sub> + MARS</span></div>
+        <div class="explorer-toolbar"><h3>Explore the results</h3><div class="filters"><label>Dataset<select id="result-dataset"></select></label><label>Model<select id="result-model"></select></label><label>Suite<select id="suite"><option value="StaticObstacles">Static obstacles</option><option value="DynamicObstacles">Dynamic obstacles</option><option value="HazardAvoidance" selected>Hazard avoidance</option><option value="CautiousGrasp">Cautious grasp</option><option value="StatePreservation">State preservation</option></select></label><label>Difficulty<select id="level"><option value="0">L0 · Nominal</option><option value="1">L1 · Perturbed</option><option value="2">L2 · Held-out</option></select></label></div></div>
+        <div class="legend"><span><i class="baseline-dot"></i><span id="result-baseline-name">π0.5</span></span><span><i class="mars-dot"></i><span id="result-mars-name">π0.5 + MARS</span></span></div>
         <div id="result-display" aria-live="polite" aria-atomic="true">
           <div class="chart-grid"><div class="metric-chart"><h4>Success rate <span>HIGHER IS BETTER ↑</span></h4><div class="bar-row"><span>π<sub>0.5</sub></span><div class="bar-track"><div class="bar baseline" style="width:44%"></div></div><strong>44%</strong></div><div class="bar-row"><span>+ MARS</span><div class="bar-track"><div class="bar mars" style="width:64%"></div></div><strong>64%</strong></div></div><div class="metric-chart"><h4>Cumulative cost <span>LOWER IS BETTER ↓</span></h4><div class="bar-row"><span>π<sub>0.5</sub></span><div class="bar-track"><div class="bar baseline" style="width:100%"></div></div><strong>7.613</strong></div><div class="bar-row"><span>+ MARS</span><div class="bar-track"><div class="bar mars" style="width:59.976%"></div></div><strong>4.57</strong></div></div></div>
           <p class="result-note">HazardAvoidance · L0: success rises from 44% to 64%, while cumulative cost falls from 7.613 to 4.57.</p>
         </div>
         <noscript><p class="result-note">The chart shows HazardAvoidance at L0. Enable JavaScript to explore the other suites and difficulty levels.</p></noscript>
       </div>
-      <p class="data-note">Values are transcribed from the manuscript’s VLA-Arena table. Cumulative cost uses the benchmark’s native units; cost bars scale to the larger value in each comparison. pp = percentage points.</p>
+      <p class="data-note">Values come from the manuscript’s three per-suite appendix tables. LIBERO-Safety reports SSR only; SafeLIBERO combines levels I and II. Cumulative cost uses the benchmark’s native units; cost bars scale to the larger value in each comparison. pp = percentage points.</p>
 
 <div class="manuscript-figures">
 <h3>Case study and component analysis</h3>

@@ -11,3 +11,5 @@ html{scroll-padding-top:90px}body{background:var(--paper);color:var(--ink);font-
 
 /* Manuscript figures retain their complete aspect ratio. */
 .manuscript-figures{margin-top:36px;display:grid;gap:24px}.synced-figure{margin:0;padding:18px}.synced-figure a{display:block;cursor:zoom-in}.synced-figure img{display:block;width:100%;height:auto;background:#fff}.synced-figure figcaption strong{color:var(--ink)}.scene img{height:auto;object-fit:contain}
+
+.results-explorer .explorer-toolbar{flex-wrap:wrap}.results-explorer .filters{flex-wrap:wrap}.results-explorer .bar-row{grid-template-columns:52px minmax(0,1fr) 52px}

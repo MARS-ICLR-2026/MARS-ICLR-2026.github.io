@@ -98,3 +98,7 @@ All nine figures currently referenced by the manuscript are included as 2400-pix
 The standalone obstacle-avoidance figure is omitted from the page because the complete real-world rollout figure already includes that comparison. Its rendered asset remains available in the source inventory.
 
 Latest table sync: all 60 explorer values were extracted from the appendix; CautiousGrasp L0 MARS CC is 1.25. All nine figure source hashes match the current manuscript. The downloadable anonymous PDF was rebuilt from the current sources (28 pages).
+
+## Full appendix explorer
+
+Explore the results now includes all four backbones across VLA-Arena (SR/CC), LIBERO-Safety (SSR), and SafeLIBERO (SR/SSR/CR). The 256 method rows form 128 baseline/MARS comparisons. SafeLIBERO uses the appendix table’s combined I + II results. Run `python3 scripts/update_results.py` to extract all three appendix tables and update script cache versions. Dataset selection here is independent of the Dataset-only Oracle gallery.
