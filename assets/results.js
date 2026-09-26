@@ -1,4 +1,4 @@
-// Source: paper/sections/evaluation.tex, Table tab:vla-arena.
+// Source: paper/sections/appendix.tex, Table tab:vla-arena-full.
 // Each row: base SR, base CC, MARS SR, MARS CC; levels L0, L1, L2.
 const RESULTS = {
   "StaticObstacles": [
@@ -66,7 +66,7 @@ const RESULTS = {
       38.0,
       2.08,
       50.0,
-      3.38
+      1.25
     ],
     [
       10.0,
@@ -84,7 +84,7 @@ const RESULTS = {
   "StatePreservation": [
     [
       60.0,
-      2.10,
+      2.1,
       62.0,
       1.26
     ],

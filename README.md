@@ -32,11 +32,11 @@ Source snapshot: local manuscript on 2026-09-26.
 
 - Title: `paper/main.tex` in the parent research workspace.
 - Method text: `paper/sections/method.tex`; exact GRV / TAFR names and independent anchor/correction update preserved.
-- Paper: an unchanged copy of `paper/main.pdf`.
+- Paper: compiled from the current `paper/main.tex` and its included source files.
 - Images: rendered from `paper/pics/introduction.pdf` and `paper/pics/framework.pdf`. The hero displays the complete introduction figure. It is explicitly labeled as a schematic, not an empirical rollout.
-- Results: `assets/results.js` transcribes the π0.5 and π0.5 + MARS rows of Table `tab:vla-arena` in `paper/sections/evaluation.tex`, including all five suites and three levels. Each entry is `[base SR, base CC, MARS SR, MARS CC]`.
+- Results: `assets/results.js` transcribes the π0.5 and π0.5 + MARS rows of Table `tab:vla-arena-full` in `paper/sections/appendix.tex`, including all five suites and three levels. Each entry is `[base SR, base CC, MARS SR, MARS CC]`.
 - The simulation explorer is synchronized with the current VLA-Arena per-level table, including the revised cumulative-cost values.
-- Dynamic-obstacle cost increases and other mixed results remain visible. Results are manuscript-reported, not independently reproduced.
+- All displayed values follow the manuscript table. Results are manuscript-reported, not independently reproduced.
 - Incomplete LIBERO-Safety collision-rate cells, real-world `todo` measurements, and planned ablations are not promoted into website claims. The downloadable manuscript is synchronized from the current local paper build.
 
 Edit `index.html` for prose/resources, `assets/style.css` for design, and `assets/results.js` for result data. When updating results, also update the initial no-JavaScript HazardAvoidance L0 chart and highlight figures in `index.html`.
@@ -67,7 +67,7 @@ The page identifies its authors only as “Anonymous authors”. No author names
 
 ## Current manuscript update
 
-GRV now uses Qwen3-VL-8B-Instruct, 256 × 256 inputs, confidence/relevance filtering, a retained-risk cap, and the four-cycle / one-cycle invocation schedule. The real-world protocol has four task families; Affordance-aware grasping is the clean training subtask demonstration, while the other three tasks have outcome-labeled safety rollouts. The 15 displayed VLA-Arena comparisons were rechecked against the current table and are unchanged. The local code landing page no longer quotes the release-upon-acceptance statement, which is commented out in the current manuscript.
+GRV now uses Qwen3-VL-8B-Instruct, 256 × 256 inputs, confidence/relevance filtering, a retained-risk cap, and the four-cycle / one-cycle invocation schedule. The real-world protocol has four task families; Affordance-aware grasping is the clean training subtask demonstration, while the other three tasks have outcome-labeled safety rollouts. The 15 displayed VLA-Arena comparisons are synchronized with the current appendix table using `python3 scripts/update_results.py`. The local code landing page no longer quotes the release-upon-acceptance statement, which is commented out in the current manuscript.
 
 ## Final rollout gallery (2026-09-21)
 
@@ -77,7 +77,7 @@ The superseded `Obstacle avoidance-1-old` folder is excluded. The `trimmed_16s` 
 
 `assets/video-sources.json` records relative source paths, exact outcome assignments, and episode indices. Rebuild with `python3 scripts/update_videos.py /path/to/final`. Requires ffmpeg. The source path itself is never embedded in website assets. Metadata and audio are omitted; H.264 video is remuxed without quality loss, with fast-start indexing and JPEG posters. Paired playback aligns start times but does not promise frame-accurate hardware synchronization.
 
-The real-world protocol summary is updated to four task families. The downloadable PDF and simulation results remain the separately maintained manuscript snapshot described above; this update concerns the final video collection.
+The real-world protocol summary is updated to four task families. The downloadable PDF and simulation results are synchronized with the current manuscript.
 
 ## Visual design refresh
 
@@ -87,12 +87,14 @@ The current presentation is inspired by [PILOT](https://github.com/pilot-wam-202
 
 The gallery contains all 424 records whose source-browser status is exactly `success`: 225 π0.5, 158 StarVLA-PI, 26 StarVLA-GR00T, 13 SmolVLA, and 2 additional SmolVLA public-variant probes. Dataset labels are preserved as supplied: 178 `vla-arena`, 97 `safelibero`, and 149 `libero-safety`. These are native-policy Oracle probes, not MARS-guided rollouts or a representative success-rate sample.
 
-All videos are bundled locally under `assets/videos/oracle`, with sanitized metadata, JPEG posters, and WebVTT execution-stage captions. `assets/oracle-videos.js` records source experiment IDs and display fields without hostnames, user names, or absolute source paths. Filtering uses Dataset only; pagination exposes all clips. Model, suite, protocol, and instructions remain visible in clip details. The source browser defines the preparation boundary as `prep_frames / 20` seconds; this timing is preserved for 39 prepared episodes. The other 210 episodes start directly from the initial state. Real-world video regeneration preserves this independent gallery.
+All videos are bundled locally under `assets/videos/oracle`, with sanitized metadata, JPEG posters, and WebVTT execution-stage captions. `assets/oracle-videos.js` records source experiment IDs and display fields without hostnames, user names, or absolute source paths. Filtering uses Dataset only; pagination exposes all clips. Model, suite, protocol, and instructions remain visible in clip details. The source browser defines the preparation boundary as `prep_frames / 20` seconds; this timing is preserved for 42 prepared episodes. The other 382 episodes start directly from the initial state. Real-world video regeneration preserves this independent gallery.
 
 ## Manuscript figure sync (2026-09-25)
 
 All nine figures currently referenced by the manuscript are included as 2400-pixel-wide WebP assets: introduction, framework, real-world results and setups, obstacle avoidance, qualitative simulation cases, trajectory anchoring, component analysis, experimental platforms, and complete real-world rollouts. Figures retain their complete aspect ratios. The framework keeps its enlargement dialog; added figures open at full resolution when clicked.
 
-`assets/image-sources.json` records relative source filenames, SHA-256 hashes, asset paths, and rendered dimensions. Source metadata is not copied into the rendered images. This update synchronizes figures and their captions; the downloadable manuscript and interactive result tables retain their existing snapshots.
+`assets/image-sources.json` records relative source filenames, SHA-256 hashes, asset paths, and rendered dimensions. Source metadata is not copied into the rendered images. Source hashes are checked against the current manuscript on each figure sync.
 
 The standalone obstacle-avoidance figure is omitted from the page because the complete real-world rollout figure already includes that comparison. Its rendered asset remains available in the source inventory.
+
+Latest table sync: all 60 explorer values were extracted from the appendix; CautiousGrasp L0 MARS CC is 1.25. All nine figure source hashes match the current manuscript. The downloadable anonymous PDF was rebuilt from the current sources (28 pages).
