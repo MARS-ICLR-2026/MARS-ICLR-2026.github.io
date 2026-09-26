@@ -28,16 +28,16 @@ No authors, affiliations, acceptance status, or publication identifiers were sup
 
 ## Content and evidence
 
-Source snapshot: local manuscript on 2026-09-17.
+Source snapshot: local manuscript on 2026-09-26.
 
 - Title: `paper/main.tex` in the parent research workspace.
 - Method text: `paper/sections/method.tex`; exact GRV / TAFR names and independent anchor/correction update preserved.
 - Paper: an unchanged copy of `paper/main.pdf`.
 - Images: rendered from `paper/pics/introduction.pdf` and `paper/pics/framework.pdf`. The hero displays the complete introduction figure. It is explicitly labeled as a schematic, not an empirical rollout.
 - Results: `assets/results.js` transcribes the π0.5 and π0.5 + MARS rows of Table `tab:vla-arena` in `paper/sections/evaluation.tex`, including all five suites and three levels. Each entry is `[base SR, base CC, MARS SR, MARS CC]`.
-- The 98.8% highlight is `(7.613 - 0.095) / 7.613 * 100`, rounded to one decimal. This uses table precision; the manuscript prose uses rounded numbers and reports 98.7%.
+- The simulation explorer is synchronized with the current VLA-Arena per-level table, including the revised cumulative-cost values.
 - Dynamic-obstacle cost increases and other mixed results remain visible. Results are manuscript-reported, not independently reproduced.
-- Incomplete LIBERO-Safety collision-rate cells, real-world `todo` measurements, and planned ablations are not promoted into website claims. The downloadable manuscript remains an unmodified draft.
+- Incomplete LIBERO-Safety collision-rate cells, real-world `todo` measurements, and planned ablations are not promoted into website claims. The downloadable manuscript is synchronized from the current local paper build.
 
 Edit `index.html` for prose/resources, `assets/style.css` for design, and `assets/results.js` for result data. When updating results, also update the initial no-JavaScript HazardAvoidance L0 chart and highlight figures in `index.html`.
 
@@ -67,13 +67,13 @@ The page identifies its authors only as “Anonymous authors”. No author names
 
 ## Current manuscript update
 
-GRV now describes 256 × 256 inputs, confidence/relevance filtering, a retained-risk cap, and the four-cycle / one-cycle invocation schedule. The real-world protocol has five task families, including state preservation; measurements remain pending. The 15 displayed VLA-Arena comparisons were rechecked against the current table and are unchanged. The local code landing page no longer quotes the release-upon-acceptance statement, which is commented out in the current manuscript.
+GRV now uses Qwen3-VL-8B-Instruct, 256 × 256 inputs, confidence/relevance filtering, a retained-risk cap, and the four-cycle / one-cycle invocation schedule. The real-world protocol has four task families; Affordance-aware grasping is the clean training subtask demonstration, while the other three tasks have outcome-labeled safety rollouts. The 15 displayed VLA-Arena comparisons were rechecked against the current table and are unchanged. The local code landing page no longer quotes the release-upon-acceptance statement, which is commented out in the current manuscript.
 
 ## Final rollout gallery (2026-09-21)
 
 Source collection: `exp_figure/videos/final`. Directory `cr16` is displayed as **Dobot CR-10**, and `a1x` as **Galaxea A1X**, using the manuscript's official platform names. Terminal `-0` means failure and `-1` means success. The user confirmed that all untagged Affordance-aware grasping clips and `a1x/pickupscrewdriver0` are successful. Affordance clips are explicitly labeled training demonstrations, not held-out evaluation evidence.
 
-The superseded `Obstacle avoidance-1-old` folder is excluded. The `trimmed_16s` pair replaces its parent Affordance episode where supplied; it is not counted twice. Cautious grasp videos use a screwdriver, which is distinguished from the knife protocol in the manuscript. Missing failure slots retain the previously specified candle placeholder with an explicit label.
+The superseded `Obstacle avoidance-1-old` folder is excluded. The `trimmed_16s` pair replaces its parent Affordance episode where supplied; it is not counted twice. Cautious grasp videos use the screwdriver protocol described in the current manuscript. Missing failure slots retain the previously specified candle placeholder with an explicit label.
 
 `assets/video-sources.json` records relative source paths, exact outcome assignments, and episode indices. Rebuild with `python3 scripts/update_videos.py /path/to/final`. Requires ffmpeg. The source path itself is never embedded in website assets. Metadata and audio are omitted; H.264 video is remuxed without quality loss, with fast-start indexing and JPEG posters. Paired playback aligns start times but does not promise frame-accurate hardware synchronization.
 

@@ -1,9 +1,9 @@
 {
   "ablation_anchoring.pdf": {
     "asset": "assets/images/ablation-anchoring.webp",
-    "width": 2400,
-    "height": 1585,
-    "sha256": "31e53f9c67f85d460653a376eb7da7b453575c0240265f10c69661db8d6bea1c"
+    "width": 637,
+    "height": 415,
+    "sha256": "1e4ca4747aaa78995830527f3722c5c1c485f6361304aab9f1fc432b09d4d583"
   },
   "all1_adjusted.jpg": {
     "asset": "assets/images/all1-adjusted.webp",
@@ -13,44 +13,44 @@
   },
   "case_study_compact.pdf": {
     "asset": "assets/images/case-study-compact.webp",
-    "width": 2400,
-    "height": 2481,
+    "width": 614,
+    "height": 635,
     "sha256": "1d03216ae1216b8b69b190e771ad6760de75cfa2bb2f3c55cf79d0dff5a04d9d"
   },
   "component_analysis.pdf": {
     "asset": "assets/images/component-analysis.webp",
-    "width": 2400,
-    "height": 1325,
+    "width": 1333,
+    "height": 736,
     "sha256": "51176eee11a6b0a72980c42e8cb07be2e78a8df75635d7f34ff1e62ba60ef6bf"
   },
   "framework.pdf": {
     "asset": "assets/images/framework.webp",
     "width": 2400,
     "height": 1071,
-    "sha256": "4fcb20e721d9174a4904f8d7b2f0d56a6243666178d5a6d47227aedce6eb211f"
+    "sha256": "07046de22939cfe0e73c254c02d8e6b5c44872241dac25b84376b96d67f26ab6"
   },
   "introduction.pdf": {
     "asset": "assets/images/introduction.webp",
-    "width": 2400,
-    "height": 1052,
+    "width": 1980,
+    "height": 868,
     "sha256": "8bbbbd9e6e3a3509c915b3337a757b90a7547290d10de972d06c3f310397d5c2"
   },
   "obstacle_avoidance.pdf": {
     "asset": "assets/images/obstacle-avoidance.webp",
-    "width": 2400,
-    "height": 813,
+    "width": 990,
+    "height": 335,
     "sha256": "14c2d49ca6f1e38aeae9ebd3d7dfc52e3ce2bf211f4a171c00ba4202aad3047e"
   },
   "real_world_reference_style.pdf": {
     "asset": "assets/images/real-world-reference-style.webp",
-    "width": 2400,
-    "height": 1747,
-    "sha256": "700329bbd05cbba7669ef5468d8a84e20bfba374b7217f2405607480bfe6ac93"
+    "width": 1543,
+    "height": 1122,
+    "sha256": "8155017aee4f6c33a849f9a8631d82ec2429bf37001cad29bc02bba25937d4c4"
   },
   "real_world_rollouts.pdf": {
     "asset": "assets/images/real-world-rollouts.webp",
-    "width": 2400,
-    "height": 2400,
+    "width": 990,
+    "height": 990,
     "sha256": "c916e5ca46003eec7deca9e7b8a83762d07d00d969a5cfa7d4b691ce7cd2f199"
   }
 }
