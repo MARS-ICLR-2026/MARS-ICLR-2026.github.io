@@ -8,7 +8,7 @@ data={};provenance=[]
 def run(args):subprocess.run(['ffmpeg','-v','error','-y']+args,check=True)
 for platform,label in platforms:
  for task,title,prefix in tasks:
-  for outcome in ['success','failure']:data[f'{platform}:{task}:{outcome}']=[]
+  for outcome in (['success'] if task=='affordance' else ['success','failure']):data[f'{platform}:{task}:{outcome}']=[]
   for folder in sorted((source/platform).glob(prefix+'*'),key=lambda p:(len(p.name),p.name)):
    if not folder.is_dir() or folder.name.endswith('-old'):continue
    match=re.search(r'-(0|1)$',folder.name)
@@ -33,7 +33,7 @@ for task,title,prefix in tasks:
  if task=='cautious':parts.append('<p class="clip-note">These recordings use a screwdriver; the manuscript describes a knife-replica protocol.</p>')
  for platform,label in platforms:
   parts.append(f'<h4 class="platform-label" data-platform="{platform}">{label}</h4><div class="outcome-grid">')
-  for outcome in ['success','failure']:
+  for outcome in (['success'] if task=='affordance' else ['success','failure']):
    key=f'{platform}:{task}:{outcome}';episodes=data[key];clips=episodes[0] if episodes else data['placeholder']
    status=outcome.capitalize()+(' · Training data' if task=='affordance' and episodes else '') if episodes else outcome.capitalize()+' slot · Placeholder'
    parts.append(f'<article class="rollout" data-rollout="{platform}-{task}-{outcome}"><div class="rollout-header"><h5>{status}</h5>')

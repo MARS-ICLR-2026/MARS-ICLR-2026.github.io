@@ -13,7 +13,6 @@ const VIDEO_EPISODES = {
       "wrist": "assets/videos/final/cr16/affordance/success/03-wrist.mp4"
     }
   ],
-  "cr16:affordance:failure": [],
   "cr16:obstacle:success": [
     {
       "front": "assets/videos/final/cr16/obstacle/success/01-front.mp4",
@@ -116,7 +115,6 @@ const VIDEO_EPISODES = {
       "wrist": "assets/videos/final/a1x/affordance/success/07-wrist.mp4"
     }
   ],
-  "a1x:affordance:failure": [],
   "a1x:obstacle:success": [
     {
       "front": "assets/videos/final/a1x/obstacle/success/01-front.mp4",
