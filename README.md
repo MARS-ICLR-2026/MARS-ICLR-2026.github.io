@@ -85,7 +85,7 @@ The current presentation is inspired by [PILOT](https://github.com/pilot-wam-202
 
 ## Oracle success gallery
 
-The gallery contains all 249 records whose source-browser status is exactly `success`: 193 π0.5, 40 StarVLA-PI, 13 SmolVLA, and 3 StarVLA-GR00T. Dataset labels are preserved as supplied: 155 `vla-arena`, 70 `safelibero`, and 24 `libero-safety`. These are native-policy Oracle probes, not MARS-guided rollouts or a representative success-rate sample.
+The gallery contains all 424 records whose source-browser status is exactly `success`: 225 π0.5, 158 StarVLA-PI, 26 StarVLA-GR00T, 13 SmolVLA, and 2 additional SmolVLA public-variant probes. Dataset labels are preserved as supplied: 178 `vla-arena`, 97 `safelibero`, and 149 `libero-safety`. These are native-policy Oracle probes, not MARS-guided rollouts or a representative success-rate sample.
 
 All videos are bundled locally under `assets/videos/oracle`, with sanitized metadata, JPEG posters, and WebVTT execution-stage captions. `assets/oracle-videos.js` records source experiment IDs and display fields without hostnames, user names, or absolute source paths. Filtering uses Dataset only; pagination exposes all clips. Model, suite, protocol, and instructions remain visible in clip details. The source browser defines the preparation boundary as `prep_frames / 20` seconds; this timing is preserved for 39 prepared episodes. The other 210 episodes start directly from the initial state. Real-world video regeneration preserves this independent gallery.
 

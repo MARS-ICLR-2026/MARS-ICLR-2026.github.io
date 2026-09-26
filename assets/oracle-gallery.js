@@ -3,7 +3,7 @@
   const byId = id => document.getElementById(id);
   const player = byId('oracle-player');
   const fields = ['dataset'];
-  const modelNames = {'π0.5':'π0.5','starvla_qwenpi':'StarVLA-PI','starvla_qwengroot':'StarVLA-GR00T','smolvla':'SmolVLA'};
+  const modelNames = {'π0.5':'π0.5','starvla_qwenpi':'StarVLA-PI','starvla_qwengroot':'StarVLA-GR00T','smolvla':'SmolVLA','smolvla_public_long':'SmolVLA (Long)','smolvla_public_spatial':'SmolVLA (Spatial)','smolvla_public_object':'SmolVLA (Object)','smolvla_public_goal':'SmolVLA (Goal)'};
   let filtered = [], page = 0, selected = null;
   const pageSize = 12;
   const name = row => modelNames[row.model] || row.model;
