@@ -11,6 +11,46 @@ const VIDEO_EPISODES = {
     {
       "front": "assets/videos/final/cr16/affordance/success/03-front.mp4",
       "wrist": "assets/videos/final/cr16/affordance/success/03-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/affordance/success/04-front.mp4",
+      "wrist": "assets/videos/final/cr16/affordance/success/04-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/affordance/success/05-front.mp4",
+      "wrist": "assets/videos/final/cr16/affordance/success/05-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/affordance/success/06-front.mp4",
+      "wrist": "assets/videos/final/cr16/affordance/success/06-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/affordance/success/07-front.mp4",
+      "wrist": "assets/videos/final/cr16/affordance/success/07-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/affordance/success/08-front.mp4",
+      "wrist": "assets/videos/final/cr16/affordance/success/08-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/affordance/success/09-front.mp4",
+      "wrist": "assets/videos/final/cr16/affordance/success/09-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/affordance/success/10-front.mp4",
+      "wrist": "assets/videos/final/cr16/affordance/success/10-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/affordance/success/11-front.mp4",
+      "wrist": "assets/videos/final/cr16/affordance/success/11-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/affordance/success/12-front.mp4",
+      "wrist": "assets/videos/final/cr16/affordance/success/12-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/affordance/success/13-front.mp4",
+      "wrist": "assets/videos/final/cr16/affordance/success/13-wrist.mp4"
     }
   ],
   "cr16:obstacle:success": [
@@ -25,6 +65,14 @@ const VIDEO_EPISODES = {
     {
       "front": "assets/videos/final/cr16/obstacle/success/03-front.mp4",
       "wrist": "assets/videos/final/cr16/obstacle/success/03-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/obstacle/success/04-front.mp4",
+      "wrist": "assets/videos/final/cr16/obstacle/success/04-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/obstacle/success/05-front.mp4",
+      "wrist": "assets/videos/final/cr16/obstacle/success/05-wrist.mp4"
     }
   ],
   "cr16:obstacle:failure": [
@@ -35,6 +83,14 @@ const VIDEO_EPISODES = {
     {
       "front": "assets/videos/final/cr16/obstacle/failure/02-front.mp4",
       "wrist": "assets/videos/final/cr16/obstacle/failure/02-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/obstacle/failure/03-front.mp4",
+      "wrist": "assets/videos/final/cr16/obstacle/failure/03-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/cr16/obstacle/failure/04-front.mp4",
+      "wrist": "assets/videos/final/cr16/obstacle/failure/04-wrist.mp4"
     }
   ],
   "cr16:hazard:success": [
@@ -113,6 +169,14 @@ const VIDEO_EPISODES = {
     {
       "front": "assets/videos/final/a1x/affordance/success/07-front.mp4",
       "wrist": "assets/videos/final/a1x/affordance/success/07-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/a1x/affordance/success/08-front.mp4",
+      "wrist": "assets/videos/final/a1x/affordance/success/08-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/a1x/affordance/success/09-front.mp4",
+      "wrist": "assets/videos/final/a1x/affordance/success/09-wrist.mp4"
     }
   ],
   "a1x:obstacle:success": [
@@ -123,6 +187,14 @@ const VIDEO_EPISODES = {
     {
       "front": "assets/videos/final/a1x/obstacle/success/02-front.mp4",
       "wrist": "assets/videos/final/a1x/obstacle/success/02-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/a1x/obstacle/success/03-front.mp4",
+      "wrist": "assets/videos/final/a1x/obstacle/success/03-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/a1x/obstacle/success/04-front.mp4",
+      "wrist": "assets/videos/final/a1x/obstacle/success/04-wrist.mp4"
     }
   ],
   "a1x:obstacle:failure": [
@@ -133,6 +205,14 @@ const VIDEO_EPISODES = {
     {
       "front": "assets/videos/final/a1x/obstacle/failure/02-front.mp4",
       "wrist": "assets/videos/final/a1x/obstacle/failure/02-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/a1x/obstacle/failure/03-front.mp4",
+      "wrist": "assets/videos/final/a1x/obstacle/failure/03-wrist.mp4"
+    },
+    {
+      "front": "assets/videos/final/a1x/obstacle/failure/04-front.mp4",
+      "wrist": "assets/videos/final/a1x/obstacle/failure/04-wrist.mp4"
     }
   ],
   "a1x:hazard:success": [

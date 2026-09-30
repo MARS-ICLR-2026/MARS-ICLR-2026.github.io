@@ -17,8 +17,78 @@
     "platform": "cr16",
     "task": "affordance",
     "outcome": "success",
-    "source": "cr16/Affordance-aware grasping4",
+    "source": "cr16/Affordance-aware grasping3",
     "episode": 3
+  },
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping4",
+    "episode": 4
+  },
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping5",
+    "episode": 5
+  },
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping6",
+    "episode": 6
+  },
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping7",
+    "episode": 7
+  },
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping8",
+    "episode": 8
+  },
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping9",
+    "episode": 9
+  },
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping10",
+    "episode": 10
+  },
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping11",
+    "episode": 11
+  },
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping12",
+    "episode": 12
+  },
+  {
+    "platform": "cr16",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "cr16/Affordance-aware grasping13",
+    "episode": 13
   },
   {
     "platform": "cr16",
@@ -54,6 +124,34 @@
     "outcome": "success",
     "source": "cr16/Obstacle avoidance3-1",
     "episode": 3
+  },
+  {
+    "platform": "cr16",
+    "task": "obstacle",
+    "outcome": "failure",
+    "source": "cr16/Obstacle avoidance4-0",
+    "episode": 3
+  },
+  {
+    "platform": "cr16",
+    "task": "obstacle",
+    "outcome": "success",
+    "source": "cr16/Obstacle avoidance4-1",
+    "episode": 4
+  },
+  {
+    "platform": "cr16",
+    "task": "obstacle",
+    "outcome": "failure",
+    "source": "cr16/Obstacle avoidance5-0",
+    "episode": 4
+  },
+  {
+    "platform": "cr16",
+    "task": "obstacle",
+    "outcome": "success",
+    "source": "cr16/Obstacle avoidance5-1",
+    "episode": 5
   },
   {
     "platform": "cr16",
@@ -176,6 +274,20 @@
   },
   {
     "platform": "a1x",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "a1x/Affordance-aware grasping8",
+    "episode": 8
+  },
+  {
+    "platform": "a1x",
+    "task": "affordance",
+    "outcome": "success",
+    "source": "a1x/Affordance-aware grasping9",
+    "episode": 9
+  },
+  {
+    "platform": "a1x",
     "task": "obstacle",
     "outcome": "failure",
     "source": "a1x/Obstacle avoidance-0",
@@ -201,6 +313,34 @@
     "outcome": "success",
     "source": "a1x/Obstacle avoidance2-1",
     "episode": 2
+  },
+  {
+    "platform": "a1x",
+    "task": "obstacle",
+    "outcome": "failure",
+    "source": "a1x/Obstacle avoidance3-0",
+    "episode": 3
+  },
+  {
+    "platform": "a1x",
+    "task": "obstacle",
+    "outcome": "success",
+    "source": "a1x/Obstacle avoidance3-1",
+    "episode": 3
+  },
+  {
+    "platform": "a1x",
+    "task": "obstacle",
+    "outcome": "failure",
+    "source": "a1x/Obstacle avoidance4-0",
+    "episode": 4
+  },
+  {
+    "platform": "a1x",
+    "task": "obstacle",
+    "outcome": "success",
+    "source": "a1x/Obstacle avoidance4-1",
+    "episode": 4
   },
   {
     "platform": "a1x",

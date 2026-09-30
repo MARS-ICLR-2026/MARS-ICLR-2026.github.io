@@ -102,3 +102,7 @@ Latest table sync: all 60 explorer values were extracted from the appendix; Caut
 ## Full appendix explorer
 
 Explore the results now includes all four backbones across VLA-Arena (SR/CC), LIBERO-Safety (SSR), and SafeLIBERO (SR/SSR/CR). The 256 method rows form 128 baseline/MARS comparisons. SafeLIBERO uses the appendix table’s combined I + II results. Run `python3 scripts/update_results.py` to extract all three appendix tables and update script cache versions. Dataset selection here is independent of the Dataset-only Oracle gallery.
+
+## Real-world media sync (2026-09-30)
+
+Added 20 paired episodes: 12 successful Affordance training demonstrations and 8 obstacle-avoidance rollouts (4 success, 4 failure). The collection now contains 62 paired episodes (124 videos): 43 successful, including 22 training demonstrations, and 19 failed. Affordance platform cards stay side by side and fill their columns; the generator preserves this layout. The superseded `-old` folder remains excluded. All 124 regenerated videos passed full decode validation.

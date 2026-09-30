@@ -29,9 +29,10 @@ data['placeholder']={v:f'assets/videos/placeholder/{v}.mp4' for v in ['front','w
 parts=['<section class="video-band" id="video" aria-labelledby="video-title" tabindex="-1"><div class="wrap"><p class="eyebrow">05 / WATCH MARS</p><h2 id="video-title">Real-world rollouts</h2><p class="gallery-intro">Four task families on Dobot CR-10 and Galaxea A1X, with paired front / wrist views. Success and failure follow the supplied recording labels. Affordance-aware grasping clips are successful training demonstrations, not held-out evaluation results. Missing recordings use a clearly labeled candle-task placeholder.</p>']
 for task,title,prefix in tasks:
  parts.append(f'<section class="video-task" aria-labelledby="video-{task}"><h3 id="video-{task}">{title}</h3>')
- if task=='affordance':parts.append('<p class="clip-note">Training demonstrations · All supplied clips are labeled successful.</p>')
- if task=='cautious':parts.append('<p class="clip-note">These recordings use a screwdriver; the manuscript describes a knife-replica protocol.</p>')
+ if task=='affordance':parts.append('<p class="clip-note">Successful training demonstrations of the pick-and-place subtasks used in the other three task families.</p><div class="platform-pair">')
+ if task=='cautious':parts.append('<p class="clip-note">Grasp the screwdriver by its handle and place it in the box.</p>')
  for platform,label in platforms:
+  if task=='affordance':parts.append('<div class="platform-column">')
   parts.append(f'<h4 class="platform-label" data-platform="{platform}">{label}</h4><div class="outcome-grid">')
   for outcome in (['success'] if task=='affordance' else ['success','failure']):
    key=f'{platform}:{task}:{outcome}';episodes=data[key];clips=episodes[0] if episodes else data['placeholder']
@@ -46,6 +47,8 @@ for task,title,prefix in tasks:
    note=('Successful training demonstration.' if task=='affordance' else 'Recorded '+outcome+' example.') if episodes else 'Candle-task placeholder. No matching '+outcome+' recording is available.'
    parts.append(f'<p class="clip-note">{note}</p></article>')
   parts.append('</div>')
+  if task=='affordance':parts.append('</div>')
+ if task=='affordance':parts.append('</div>')
  parts.append('</section>')
 parts.append('</div></section>')
 p=root/'index.html';s=p.read_text();start=s.index('    <section class="video-band"');end=s.index('\n    <section class="section wrap oracle-section"',start) if 'class="section wrap oracle-section"' in s else s.index('\n  </main>',start);p.write_text(s[:start]+'    '+''.join(parts)+s[end:])
