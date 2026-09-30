@@ -422,7 +422,7 @@
   {
     "platform": "a1x",
     "task": "cautious",
-    "outcome": "success",
+    "outcome": "failure",
     "source": "a1x/pickupscrewdriver0",
     "episode": 1
   },
@@ -431,6 +431,6 @@
     "task": "cautious",
     "outcome": "success",
     "source": "a1x/pickupscrewdriver-1",
-    "episode": 2
+    "episode": 1
   }
 ]

@@ -71,7 +71,7 @@ GRV now uses Qwen3-VL-8B-Instruct, 256 × 256 inputs, confidence/relevance filte
 
 ## Final rollout gallery (2026-09-21)
 
-Source collection: `exp_figure/videos/final`. Directory `cr16` is displayed as **Dobot CR-10**, and `a1x` as **Galaxea A1X**, using the manuscript's official platform names. Terminal `-0` means failure and `-1` means success. The user confirmed that all untagged Affordance-aware grasping clips and `a1x/pickupscrewdriver0` are successful. Affordance clips are explicitly labeled training demonstrations, not held-out evaluation evidence.
+Source collection: `exp_figure/videos/final`. Directory `cr16` is displayed as **Dobot CR-10**, and `a1x` as **Galaxea A1X**, using the manuscript's official platform names. Terminal `-0` means failure and `-1` means success. The user confirmed that all untagged Affordance-aware grasping clips are successful. The later user correction labels `a1x/pickupscrewdriver0` as a failure. Affordance clips are explicitly labeled training demonstrations, not held-out evaluation evidence.
 
 The superseded `Obstacle avoidance-1-old` folder is excluded. The `trimmed_16s` pair replaces its parent Affordance episode where supplied; it is not counted twice. Cautious grasp videos use the screwdriver protocol described in the current manuscript. Missing failure slots for Obstacle avoidance, Hazard avoidance, and Cautious grasp retain the previously specified candle placeholder with an explicit label. Affordance-aware grasping has no failure slot because it is shown only as successful training data.
 
@@ -106,3 +106,5 @@ Explore the results now includes all four backbones across VLA-Arena (SR/CC), LI
 ## Real-world media sync (2026-09-30)
 
 Added 20 paired episodes: 12 successful Affordance training demonstrations and 8 obstacle-avoidance rollouts (4 success, 4 failure). The collection now contains 62 paired episodes (124 videos): 43 successful, including 22 training demonstrations, and 19 failed. Affordance platform cards stay side by side and fill their columns; the generator preserves this layout. The superseded `-old` folder remains excluded. All 124 regenerated videos passed full decode validation.
+
+A1X cautious grasp now uses its own `pickupscrewdriver0` front/wrist pair as the failure example. This pair is removed from the success category; `pickupscrewdriver-1` remains the success example. Both published failure videos were verified frame-for-frame against their A1X sources. There are now 42 successful pairs (including 22 training demonstrations) and 20 failed pairs; no displayed failure slots use placeholders.

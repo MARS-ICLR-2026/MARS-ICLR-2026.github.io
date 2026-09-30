@@ -13,6 +13,8 @@ for platform,label in platforms:
    if not folder.is_dir() or folder.name.endswith('-old'):continue
    match=re.search(r'-(0|1)$',folder.name)
    outcome=('success' if match[1]=='1' else 'failure') if match else 'success'
+   # Explicit user correction: this unhyphenated A1X recording is a failure.
+   if platform=='a1x' and folder.name=='pickupscrewdriver0':outcome='failure'
    key=f'{platform}:{task}:{outcome}';idx=len(data[key])+1;entry={}
    # Prefer the explicitly trimmed derivative, when present; never duplicate it.
    clipdir=folder/'trimmed_16s' if (folder/'trimmed_16s').is_dir() else folder
@@ -26,7 +28,7 @@ for platform,label in platforms:
 data['placeholder']={v:f'assets/videos/placeholder/{v}.mp4' for v in ['front','wrist']}
 (root/'assets/videos.js').write_text('const VIDEO_EPISODES = '+json.dumps(data,indent=2)+';\n')
 (root/'assets/video-sources.json').write_text(json.dumps(provenance,indent=2)+'\n')
-parts=['<section class="video-band" id="video" aria-labelledby="video-title" tabindex="-1"><div class="wrap"><p class="eyebrow">05 / WATCH MARS</p><h2 id="video-title">Real-world rollouts</h2><p class="gallery-intro">Four task families on Dobot CR-10 and Galaxea A1X, with paired front / wrist views. Success and failure follow the supplied recording labels. Affordance-aware grasping clips are successful training demonstrations, not held-out evaluation results. Missing recordings use a clearly labeled candle-task placeholder.</p>']
+parts=['<section class="video-band" id="video" aria-labelledby="video-title" tabindex="-1"><div class="wrap"><p class="eyebrow">05 / WATCH MARS</p><h2 id="video-title">Real-world rollouts</h2><p class="gallery-intro">Four task families on Dobot CR-10 and Galaxea A1X, with paired front / wrist views. Success and failure follow the supplied recording labels. Affordance-aware grasping clips are successful training demonstrations, not held-out evaluation results.</p>']
 for task,title,prefix in tasks:
  parts.append(f'<section class="video-task" aria-labelledby="video-{task}"><h3 id="video-{task}">{title}</h3>')
  if task=='affordance':parts.append('<p class="clip-note">Successful training demonstrations of the pick-and-place subtasks used in the other three task families.</p><div class="platform-pair">')

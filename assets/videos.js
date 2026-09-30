@@ -267,13 +267,14 @@ const VIDEO_EPISODES = {
     {
       "front": "assets/videos/final/a1x/cautious/success/01-front.mp4",
       "wrist": "assets/videos/final/a1x/cautious/success/01-wrist.mp4"
-    },
-    {
-      "front": "assets/videos/final/a1x/cautious/success/02-front.mp4",
-      "wrist": "assets/videos/final/a1x/cautious/success/02-wrist.mp4"
     }
   ],
-  "a1x:cautious:failure": [],
+  "a1x:cautious:failure": [
+    {
+      "front": "assets/videos/final/a1x/cautious/failure/01-front.mp4",
+      "wrist": "assets/videos/final/a1x/cautious/failure/01-wrist.mp4"
+    }
+  ],
   "placeholder": {
     "front": "assets/videos/placeholder/front.mp4",
     "wrist": "assets/videos/placeholder/wrist.mp4"
